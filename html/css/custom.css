@@ -1,0 +1,10 @@
+.cke_chrome {
+	border: none !important;
+}
+#cke_1_contents {
+	transition: height 500ms ease-in-out;
+}
+#cke_1_bottom {
+	opacity: 0;
+	transition: opacity 750ms ease-in-out;
+}
