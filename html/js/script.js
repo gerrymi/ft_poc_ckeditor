@@ -25,9 +25,9 @@ var initScript = ( function() {
 
 		// :(((
 		if ( isBBCodeBuiltIn ) {
-			editorElement.setHtml(
-				'Compose Message'
-			);
+			//editorElement.setHtml(
+			//	'Compose Message'
+			//);
 		}
 
 		// Depending on the wysiwygare plugin availability initialize classic or inline editor.
