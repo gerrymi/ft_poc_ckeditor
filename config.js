@@ -26,7 +26,7 @@ CKEDITOR.editorConfig = function( config ) {
 		{ name: 'about' }
 	];
 	
-	config.placeholder = 'Type here...';
+
 
 	// The default plugins included in the basic setup define some buttons that
 	// are not needed in a basic editor. They are removed here.
