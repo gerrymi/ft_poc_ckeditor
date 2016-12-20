@@ -12,7 +12,6 @@ if ( CKEDITOR.env.ie && CKEDITOR.env.version < 9 )
 // unless user specified own height.
 CKEDITOR.config.height = '300px';
 CKEDITOR.config.width = 'auto';
-CKEDITOR.config.placeholder = 'test value';
 CKEDITOR.config.toolbarLocation = 'bottom';
 CKEDITOR.config.startupFocus = true;
 
@@ -33,7 +32,7 @@ var initScript = ( function() {
 		// Depending on the wysiwygare plugin availability initialize classic or inline editor.
 		if ( wysiwygareaAvailable ) {
 			var config = {};
-			config.placeholder = 'some value'; 
+			config.placeholder = 'Compose Message'; 
 			CKEDITOR.replace( 'editor', config );
 		} else {
 			editorElement.setAttribute( 'contenteditable', 'true' );
