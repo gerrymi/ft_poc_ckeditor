@@ -12,7 +12,7 @@ if ( CKEDITOR.env.ie && CKEDITOR.env.version < 9 )
 // unless user specified own height.
 CKEDITOR.config.height = '300px';
 CKEDITOR.config.width = 'auto';
-CKEDITOR.config.placeholder = 'Compose Message';
+CKEDITOR.config.placeholder = 'test value';
 CKEDITOR.config.toolbarLocation = 'bottom';
 CKEDITOR.config.startupFocus = true;
 
