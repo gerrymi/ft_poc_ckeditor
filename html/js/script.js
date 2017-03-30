@@ -32,7 +32,7 @@ var initScript = ( function() {
 		// Depending on the wysiwygare plugin availability initialize classic or inline editor.
 		if ( wysiwygareaAvailable ) {
 			var config = {};
-			config.placeholder = 'Compose Message'; 
+			config.placeholder = 'Compose Message';
 			CKEDITOR.replace( 'editor', config );
 		} else {
 			editorElement.setAttribute( 'contenteditable', 'true' );
