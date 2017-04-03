@@ -12,35 +12,45 @@ function hideToolbar(newHeight) {
 	toolbar.style.opacity = 0
 }
 
+
 function insertQuotes(insert) {
-	var storage = [];
 	// do this in a loop
-	getJSON('http://stg-api.ibmbl.com/getTrending.php',
+	getJSON('http://stg-api.ibmbl.com/getPost.php?token=fdb603bb6d7e7532a088842932ad8368&id=175',
 	function(err, data) {
 	  if (err != null) {
 	    alert('Something went wrong: ' + err);
 	  } else {
-			console.log("data: ", data.status);
+			console.log("data: ", data.data.message_html);
 			// Store the response
-			storage.push(data.status);
+			saveData(data.data.message_html);
 	  }
 	});
-	printResponse(storage);
-	// Format all the quotes
+//	console.log('storage: ', storage);
 
+	// Format all the quotes
+}
+
+
+function saveData(input) {
+	var storage = input;
+	printResponse(storage);
 }
 
 function printResponse(input) {
-	console.log("storage: ", input);
-	console.log("storage O: ", input[0]);
-	CKEDITOR.instances.editor.setData(input[0]);
+	CKEDITOR.instances.editor.setData(input);
 }
 
 function injectQuote(input) {
 	CKEDITOR.instances.editor.setData(input);
 }
 
+
+var tobeInserted = "<div>bunch of html</div>";
 CKEDITOR.on('instanceCreated', function(e) {
+		if (typeof toInject !== 'undefined' && toInject) {
+			//e.editor.setData(tobeInserted);
+			insertQuotes();
+		}
 		var postEnabled = false;
     e.editor.on('change', function (event) {
 				var content = CKEDITOR.instances.editor.getData();
