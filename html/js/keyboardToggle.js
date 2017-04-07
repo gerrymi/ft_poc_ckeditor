@@ -12,6 +12,10 @@ function hideToolbar(newHeight) {
 	toolbar.style.opacity = 0
 }
 
+function returnStart() {
+	CKEDITOR.instances.editor.setData("Things are started.");
+}
+
 
 function insertQuotes(insert) {
 	// do this in a loop
@@ -47,11 +51,12 @@ function injectQuote(input) {
 
 var tobeInserted = "<div>bunch of html</div>";
 CKEDITOR.on('instanceCreated', function(e) {
-		if (typeof toInject !== 'undefined' && toInject) {
+		//if (typeof toInject !== 'undefined' && toInject) {
 		//if (1==1) {
 			//e.editor.setData(tobeInserted);
-			insertQuotes();
-		}
+			//insertQuotes();
+		//}
+		WebViewBridge.send('started');
 		var postEnabled = false;
     e.editor.on('change', function (event) {
 				var content = CKEDITOR.instances.editor.getData();
