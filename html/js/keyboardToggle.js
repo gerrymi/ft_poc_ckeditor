@@ -13,8 +13,8 @@ function hideToolbar(newHeight) {
 }
 
 function returnStart() {
-	CKEDITOR.instances.editor.setData("Things are started.");
-	//insertQuotes();
+	//CKEDITOR.instances.editor.setData("Things are started.");
+	insertQuotes();
 }
 
 function startup() {
@@ -30,7 +30,7 @@ function insertQuotes() {
 	  } else {
 			console.log("data: ", data.data.message_html);
 			// Store the response
-			printResponse(data.data.message_html);
+			CKEDITOR.instances.editor.setData(data.data.message_html);
 	  }
 	});
 //	console.log('storage: ', storage);
@@ -60,6 +60,7 @@ CKEDITOR.on('instanceCreated', function(e) {
 			//e.editor.setData(tobeInserted);
 			//insertQuotes();
 		//}
+		//insertQuotes();
 
 		var postEnabled = false;
     e.editor.on('change', function (event) {
