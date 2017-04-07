@@ -14,7 +14,7 @@ function hideToolbar(newHeight) {
 
 function returnStart() {
 	//CKEDITOR.instances.editor.setData("Things are started.");
-	insertQuotes();
+	//insertQuotes();
 }
 
 function startup() {
@@ -60,7 +60,7 @@ CKEDITOR.on('instanceCreated', function(e) {
 			//e.editor.setData(tobeInserted);
 			//insertQuotes();
 		//}
-		//insertQuotes();
+		insertQuotes();
 
 		var postEnabled = false;
     e.editor.on('change', function (event) {
