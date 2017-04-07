@@ -13,8 +13,8 @@ function hideToolbar(newHeight) {
 }
 
 function returnStart() {
-	//CKEDITOR.instances.editor.setData("Things are started.");
-	insertQuotes();
+	CKEDITOR.instances.editor.setData("Things are started.");
+	//insertQuotes();
 }
 
 function startup() {
