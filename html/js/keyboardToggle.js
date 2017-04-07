@@ -13,14 +13,15 @@ function hideToolbar(newHeight) {
 }
 
 function returnStart() {
-	CKEDITOR.instances.editor.setData("Things are started.");
+	//CKEDITOR.instances.editor.setData("Things are started.");
+	insertQuotes();
 }
 
 function startup() {
 	WebViewBridge.send('started');
 }
 
-function insertQuotes(insert) {
+function insertQuotes() {
 	// do this in a loop
 	getJSON('http://stg-api.ibmbl.com/getPost.php?token=fdb603bb6d7e7532a088842932ad8368&id=175',
 	function(err, data) {
@@ -29,7 +30,7 @@ function insertQuotes(insert) {
 	  } else {
 			console.log("data: ", data.data.message_html);
 			// Store the response
-			saveData(data.data.message_html);
+			printResponse(data.data.message_html);
 	  }
 	});
 //	console.log('storage: ', storage);
