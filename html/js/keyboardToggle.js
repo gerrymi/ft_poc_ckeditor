@@ -47,8 +47,8 @@ function injectQuote(input) {
 
 var tobeInserted = "<div>bunch of html</div>";
 CKEDITOR.on('instanceCreated', function(e) {
-		//if (typeof toInject !== 'undefined' && toInject) {
-		if (1==1) {
+		if (typeof toInject !== 'undefined' && toInject) {
+		//if (1==1) {
 			//e.editor.setData(tobeInserted);
 			insertQuotes();
 		}
