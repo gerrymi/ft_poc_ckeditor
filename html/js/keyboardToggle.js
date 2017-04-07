@@ -12,8 +12,8 @@ function hideToolbar(newHeight) {
 	toolbar.style.opacity = 0
 }
 
-function returnStart() {
-	CKEDITOR.instances.editor.setData("Here is some quoted text.");
+function returnStart(payload) {
+	CKEDITOR.instances.editor.setData("Here will be some quoted text from these posts: "+payload);
 	//insertQuotes();
 }
 
@@ -61,7 +61,7 @@ CKEDITOR.on('instanceCreated', function(e) {
 			//insertQuotes();
 		//}
 		//insertQuotes();
-
+		e.editor.focus();
 		var postEnabled = false;
     e.editor.on('change', function (event) {
 				var content = CKEDITOR.instances.editor.getData();
