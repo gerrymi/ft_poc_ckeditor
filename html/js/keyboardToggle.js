@@ -16,6 +16,9 @@ function returnStart() {
 	CKEDITOR.instances.editor.setData("Things are started.");
 }
 
+function startup() {
+	WebViewBridge.send('started');
+}
 
 function insertQuotes(insert) {
 	// do this in a loop
@@ -56,7 +59,7 @@ CKEDITOR.on('instanceCreated', function(e) {
 			//e.editor.setData(tobeInserted);
 			//insertQuotes();
 		//}
-		WebViewBridge.send('started');
+
 		var postEnabled = false;
     e.editor.on('change', function (event) {
 				var content = CKEDITOR.instances.editor.getData();
