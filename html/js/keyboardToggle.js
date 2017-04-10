@@ -16,14 +16,6 @@ function returnStart(payload) {
 	var array = payload.split('|');
 	var result = '';
 	array.forEach(function(part, index, array) {
-		// getJSON('http://stg-api.ibmbl.com/getPost.php?token=fdb603bb6d7e7532a088842932ad8368&id='+part,
-		// function(err, data) {
-		//   if (err != null) {
-		//     alert('Something went wrong: ' + err);
-		//   } else {
-		// 		result += "[QUOTE]"+data.data.message_bbcode+"[/QUOTE]";
-		//   }
-		// });
 		result += "[QUOTE]I'm looking for Q owners in the San Diego/SoCal area to sport my new overlay line for the Q's. If you're interested, email me !\r\n\r\nB@tIf you're interested, email me !\r\n\r\nB@t[/QUOTE]";
 	});
 	result += "\r\n\r\n";
@@ -32,8 +24,14 @@ function returnStart(payload) {
 
 	//insertQuotes();
 }
-
-I'm looking for Q owners in the San Diego/SoCal area to sport my new overlay line for the Q's. If you're interested, email me !\r\n\r\nB@tIf you're interested, email me !\r\n\r\nB@t
+// getJSON('http://stg-api.ibmbl.com/getPost.php?token=fdb603bb6d7e7532a088842932ad8368&id='+part,
+// function(err, data) {
+//   if (err != null) {
+//     alert('Something went wrong: ' + err);
+//   } else {
+// 		result += "[QUOTE]"+data.data.message_bbcode+"[/QUOTE]";
+//   }
+// });
 
 function startup() {
 	WebViewBridge.send('started');
