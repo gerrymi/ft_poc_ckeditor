@@ -14,12 +14,12 @@ function hideToolbar(newHeight) {
 
 function returnStart(payload) {
 	var array = payload.split('|');
+	var result = '';
 	array.forEach(function(part, index, array) {
-		array[index] = "[QUOTE]Here will be some quoted text from: "+part+"[/QUOTE]";
+		result += "[QUOTE]Here will be some quoted text from: "+part+"[/QUOTE]";
 	});
-	array.forEach(function(part, index, array) {
-		CKEDITOR.instances.editor.setData(array[index]);
-	});
+	CKEDITOR.instances.editor.setData(result);
+
 
 	//insertQuotes();
 }
