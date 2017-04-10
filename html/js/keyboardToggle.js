@@ -18,7 +18,7 @@ function returnStart(payload) {
 	array.forEach(function(part, index, array) {
 		result += "[QUOTE]I'm looking for Q owners in the San Diego/SoCal area to sport my new overlay line for the Q's. If you're interested, email me![/QUOTE]";
 	});
-	result += "[P]\r\n\r\n[/P]";
+	result += "\r\n \r\n";
 	CKEDITOR.instances.editor.setData(result);
 
 
