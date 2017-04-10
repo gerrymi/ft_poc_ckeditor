@@ -18,7 +18,7 @@ function returnStart(payload) {
 	array.forEach(function(part, index, array) {
 		result += "[QUOTE]Here will be some quoted text from: "+part+"[/QUOTE]";
 	});
-	result += "<p> </p>"
+	result += "[LIST][/LIST]";
 	CKEDITOR.instances.editor.setData(result);
 
 
