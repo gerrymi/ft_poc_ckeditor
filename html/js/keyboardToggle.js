@@ -13,7 +13,14 @@ function hideToolbar(newHeight) {
 }
 
 function returnStart(payload) {
-	CKEDITOR.instances.editor.setData("Here will be some quoted text from these posts: "+payload);
+	var array = payload.split('|');
+	array.forEach(function(part, index, array) {
+		array[index] = "[QUOTE]Here will be some quoted text from: "+part+"[/QUOTE]";
+	});
+	array.forEach(function(part, index, array) {
+		CKEDITOR.instances.editor.setData(array[index]);
+	});
+
 	//insertQuotes();
 }
 
