@@ -16,7 +16,14 @@ function returnStart(payload) {
 	var array = payload.split('|');
 	var result = '';
 	array.forEach(function(part, index, array) {
-		result += "[QUOTE]Here will be some quoted text from: "+part+"[/QUOTE]";
+		getJSON('http://stg-api.ibmbl.com/getPost.php?token=fdb603bb6d7e7532a088842932ad8368&id='+part,
+		function(err, data) {
+		  if (err != null) {
+		    alert('Something went wrong: ' + err);
+		  } else {
+				result += "[QUOTE]"+data.data.message_bbcode+"[/QUOTE]";
+		  }
+		});
 	});
 	result += "[LIST][/LIST]";
 	CKEDITOR.instances.editor.setData(result);
