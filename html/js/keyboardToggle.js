@@ -13,15 +13,13 @@ function hideToolbar(newHeight) {
 }
 
 function returnStart(payload) {
-	var array = payload.split('|');
-	var result = '';
-	array.forEach(function(part, index, array) {
-		result += "[QUOTE]I'm looking for Q owners in the San Diego/SoCal area to sport my new overlay line for the Q's. If you're interested, email me![/QUOTE]";
-	});
-	result += "\r\n \r\n";
-	CKEDITOR.instances.editor.setData(result);
-
-
+	// var array = payload.split('|');
+	// var result = '';
+	// array.forEach(function(part, index, array) {
+	// 	result += "[QUOTE]postId: "+part+" --- I'm looking for Q owners in the San Diego/SoCal area to sport my new overlay line for the Q's. If you're interested, email me![/QUOTE]";
+	// });
+	// result += "\r\n \r\n";
+	CKEDITOR.instances.editor.setData(payload);
 	//insertQuotes();
 }
 // getJSON('http://stg-api.ibmbl.com/getPost.php?token=fdb603bb6d7e7532a088842932ad8368&id='+part,
